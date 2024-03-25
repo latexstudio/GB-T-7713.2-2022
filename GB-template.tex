@@ -1,0 +1,92 @@
+%!TEX program = xelatex
+\documentclass{GB-template}
+\usepackage{textcomp}
+\usepackage{pifont}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multirow}
+\setlist[enumerate]{nosep, label={\alph*）},left=2\ccwd}
+% use parameters
+\ICS{ICS 01.140.20}
+\fenlei{CCS A 14}
+\biaozhunhao{GB/T 7713.2~\rule[.3\ccwd]{.8em}{.5pt}~2022}
+\daitibiaozhunhao{部分代替：GB/T 7713~\rule[.3\ccwd]{.8em}{.5pt}~1987}
+\name{学术论文编写规则}
+\enname{Presentation of academic papers}
+\conformity{}
+\department{\parbox{11\ccwd}{国家市场监督管理总局\\
+国家标准化管理委员会}}
+\fabudate{2022-12-30}
+\shishidate{2023-07-01}
+\setmainfont{texgyretermes}[
+  UprightFont = *-regular ,
+  BoldFont = *-bold ,
+  ItalicFont = *-italic ,
+  BoldItalicFont = *-bolditalic ,
+  Extension = .otf ,
+  Scale = 1.0 ]
+ \setCJKfamilyfont {zhei}{FandolHei-Regular.otf} 
+ \newcommand{\hei}{\CJKfamily{zhei}}
+\newcommand{\SubSectionStart}{\begin{enumerate}[label=\thesection.\arabic*,wide, labelwidth=!, labelindent=0pt]}
+\newcommand{\SubSection}[1]{\item #1}
+\newcommand{\SubSectionEnd}{\end{enumerate}}
+
+   \setcounter{tocdepth}{1}
+   
+   \usepackage{pifont}
+\usepackage{varwidth}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,xparse,breakable,xparse} 
+
+\newtcolorbox{mybox}[2]{enhanced,breakable,
+before skip=2mm,after skip=2mm,
+colback=white!40,colframe=#2!30!black,boxrule=0.3mm,rightrule=0.3mm,
+attach boxed title to top center={xshift=0cm,yshift*=1mm-\tcboxedtitleheight},
+varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=#2!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[draw=black,line width=1pt,left color=#2!1!white,right color=#2!1!white,
+middle color=#2!1!white]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},
+title=#1,coltitle=black,fonttitle=\large\sffamily}
+   
+\begin{document}
+% preamble.tex 里面是前言部分。
+\input{preamble.tex}
+% mainmatter 是「正文」的意思。
+% 从这里开始都是正文。
+\mainmatter
+\input{basic-use.tex}
+%\input{test.tex}
+% appendix 开始是「附件」
+\appendix\autoclearpage
+\input{appendix.tex}
+
+
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{1} GB/T 3179一2009 期刊编排格式
+\bibitem{1} 中国科学技术信息研究所，北京图书馆.汉语主题词表:工程技术卷:第1-13册[M].北京:科学技术文献出版社，2014.
+
+\bibitem{1} 中国科学技术信息研究所，北京图书馆.汉语主题词表:自然科学卷:第1-5册[M].北京:科学技术文献出版社，2018.
+
+\bibitem{1} 国际计量局.国际单位制(SI)[M].7版.北京:科学出版社，2000.
+
+\bibitem{1} 中华人民共和国国家通用语言文字法(中华人民共和国主席令第37号)
+
+\bibitem{1} 国务院关于公布《通用规范汉字表》的通知(国发[2013]23号)
+
+\end{thebibliography}
+\end{document}
